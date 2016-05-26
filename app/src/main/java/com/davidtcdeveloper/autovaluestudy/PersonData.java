@@ -1,5 +1,7 @@
 package com.davidtcdeveloper.autovaluestudy;
 
+import android.support.annotation.Nullable;
+
 import com.google.auto.value.AutoValue;
 
 /**
@@ -19,20 +21,27 @@ public abstract class PersonData {
 
     abstract String profileUrl();
 
+    @Nullable
     abstract String pictureImageUrl();
 
-    public static PersonData create(
-            long id,
-            String name,
-            int status,
-            String eMail,
-            String profileUrl,
-            String pictureImageUrl) {
-        return new AutoValue_PersonData(id,
-                name,
-                status,
-                eMail,
-                profileUrl,
-                pictureImageUrl);
+    static Builder builder() {
+        return new AutoValue_PersonData.Builder();
+    }
+
+    @AutoValue.Builder
+    abstract static class Builder {
+        abstract Builder id(long value);
+
+        abstract Builder name(String value);
+
+        abstract Builder status(int value);
+
+        abstract Builder eMail(String value);
+
+        abstract Builder profileUrl(String value);
+
+        abstract Builder pictureImageUrl(@Nullable String value);
+
+        abstract PersonData build();
     }
 }
