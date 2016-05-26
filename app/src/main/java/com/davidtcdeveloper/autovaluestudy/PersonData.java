@@ -44,4 +44,8 @@ public abstract class PersonData {
 
         abstract PersonData build();
     }
+
+    public boolean hasProfilePicure() {
+        return this.profileUrl() != null;
+    }
 }
