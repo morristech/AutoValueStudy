@@ -4,6 +4,8 @@ import android.os.Parcelable;
 import android.support.annotation.Nullable;
 
 import com.google.auto.value.AutoValue;
+import com.google.gson.Gson;
+import com.google.gson.TypeAdapter;
 
 /**
  * Person data.
@@ -24,6 +26,10 @@ public abstract class PersonData implements Parcelable {
 
     @Nullable
     abstract String pictureImageUrl();
+
+    public static TypeAdapter<PersonData> typeAdapter(Gson gson) {
+        return new AutoValue_PersonData.GsonTypeAdapter(gson);
+    }
 
     static Builder builder() {
         return new AutoValue_PersonData.Builder();
