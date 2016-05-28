@@ -1,5 +1,6 @@
 package com.davidtcdeveloper.autovaluestudy;
 
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 
 import com.google.auto.value.AutoValue;
@@ -9,7 +10,7 @@ import com.google.auto.value.AutoValue;
  * Created by david on 26/05/16.
  */
 @AutoValue
-public abstract class PersonData {
+public abstract class PersonData implements Parcelable {
 
     abstract long id();
 
