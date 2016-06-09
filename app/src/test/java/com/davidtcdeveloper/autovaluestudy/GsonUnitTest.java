@@ -2,6 +2,7 @@ package com.davidtcdeveloper.autovaluestudy;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.ryanharter.auto.value.gson.AutoValueGsonTypeAdapterFactory;
 
 import org.junit.Test;
 
@@ -18,7 +19,7 @@ public class GsonUnitTest {
     public void json_isCorrect() throws Exception {
         final Gson gson =
                 new GsonBuilder()
-                        .registerTypeAdapterFactory(new AutoValueTypeAdapterFactory())
+                        .registerTypeAdapterFactory(new AutoValueGsonTypeAdapterFactory())
                         .create();
 
         PersonData personData = PersonData.builder()
