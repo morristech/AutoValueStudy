@@ -9,9 +9,9 @@ import com.ryanharter.auto.value.gson.GsonTypeAdapterFactory;
  * Created by david on 29/08/16.
  */
 @GsonTypeAdapterFactory
-public abstract class AutoValueGsonAdapterFactory implements TypeAdapterFactory {
+abstract class AutoValueGsonAdapterFactory implements TypeAdapterFactory {
 
-    public static TypeAdapterFactory create() {
+    static TypeAdapterFactory create() {
         return new AutoValueGson_AutoValueGsonAdapterFactory();
     }
 }
